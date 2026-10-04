@@ -1,3 +1,24 @@
+
+# Generic CSV & Excel Data Analyzer
+
+> A Python-based web application for cleaning, profiling, analyzing, and exporting CSV and Excel datasets.
+
+### 🌐 Live Demo
+
+**Try the application:**
+https://business-data-automation-gskkbqzkgxadfgznrjiy6k.streamlit.app/
+
+### 📂 Source Code
+
+**GitHub:**
+https://github.com/imaadmohd22/business-data-automation
+
+---
+
+## 🚀 Features
+
+
+
 # Generic CSV & Excel Data Analyzer
 
 A Python-based web application for **cleaning, profiling, analyzing, and exporting CSV and Excel datasets**.
