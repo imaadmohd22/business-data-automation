@@ -1,38 +1,41 @@
-
 # Generic CSV & Excel Data Analyzer
 
-> A Python-based web application for cleaning, profiling, analyzing, and exporting CSV and Excel datasets.
+> A Python-based web application for cleaning, profiling, analyzing, visualizing, and exporting CSV and Excel datasets.
 
 ### 🌐 Live Demo
 
-**Try the application:**
-https://business-data-automation-gskkbqzkgxadfgznrjiy6k.streamlit.app/
+**[Launch the Live Application](https://business-data-automation-gskkbqzkgxadfgznrjiy6k.streamlit.app/)**
 
 ### 📂 Source Code
 
-**GitHub:**
-https://github.com/imaadmohd22/business-data-automation
+**[View on GitHub](https://github.com/imaadmohd22/business-data-automation)**
+
+---
+
+## 📸 Application Preview
+
+### Dataset Overview
+
+![Dataset Overview](screenshots/overview.png)
+
+### Data Analysis & Visualizations
+
+![Data Analysis](screenshots/analysis.png)
+
+### Data Cleaning
+
+![Data Cleaning](screenshots/cleaning.png)
 
 ---
 
 ## 🚀 Features
 
-
-
-# Generic CSV & Excel Data Analyzer
-
-A Python-based web application for **cleaning, profiling, analyzing, and exporting CSV and Excel datasets**.
-
-The tool is designed to work with general-purpose tabular data rather than a specific business domain. Users can upload CSV/XLSX files, automatically inspect data quality, analyze columns, detect outliers and correlations, clean the dataset, and download the processed result.
-
-## 🚀 Features
-
 ### 📂 File Upload
 
-* Supports CSV files
-* Supports Excel (`.xlsx`) files
-* Handles invalid or unsupported files gracefully
-* Supports multiple uploaded files
+* CSV file support
+* Excel (`.xlsx`) file support
+* Multiple file upload
+* File validation and error handling
 
 ### 🔍 Automatic Data Profiling
 
@@ -44,7 +47,8 @@ The application automatically analyzes uploaded datasets and provides:
 * Missing values
 * Duplicate records
 * Unique values
-* Numeric and categorical columns
+* Numeric columns
+* Categorical columns
 * Date columns
 
 ### 📊 Data Analysis
@@ -54,9 +58,9 @@ The application automatically analyzes uploaded datasets and provides:
 * Count
 * Mean
 * Standard deviation
-* Minimum
-* Maximum
+* Minimum and maximum
 * Quartiles
+* Statistical summaries
 * Distribution visualization
 
 #### Categorical Analysis
@@ -68,15 +72,14 @@ The application automatically analyzes uploaded datasets and provides:
 
 #### Date Analysis
 
-* Minimum date
-* Maximum date
+* Minimum and maximum dates
 * Date range
 * Records by month
 * Records by year
 
 ### 🔗 Correlation Analysis
 
-The application can calculate correlations between numeric columns and identify strong relationships.
+The application calculates correlations between numeric columns and identifies strong relationships between variables.
 
 > Correlation does not necessarily imply causation.
 
@@ -86,7 +89,7 @@ Uses the **Interquartile Range (IQR)** method to identify potential numeric outl
 
 Users can:
 
-* View detected outliers
+* Detect outliers
 * Keep outliers
 * Remove outlier rows
 * Cap extreme values
@@ -107,12 +110,13 @@ Available strategies include:
 * Replace with median
 * Replace with mean
 * Replace with most frequent value
-* Replace missing text with `"Unknown"`
-* Remove or cap outliers
+* Replace missing text with `Unknown`
+* Remove outlier rows
+* Cap extreme values
 
 ### 📥 Export
 
-After cleaning, users can download the processed dataset as:
+Cleaned datasets can be downloaded as:
 
 * CSV
 * Excel (`.xlsx`)
@@ -121,10 +125,12 @@ After cleaning, users can download the processed dataset as:
 
 ## 🛠️ Tech Stack
 
-* **Python**
-* **Pandas** — data processing and analysis
-* **Streamlit** — interactive web application
-* **OpenPyXL** — Excel file handling
+| Technology | Purpose                      |
+| ---------- | ---------------------------- |
+| Python     | Application logic            |
+| Pandas     | Data processing and analysis |
+| Streamlit  | Interactive web application  |
+| OpenPyXL   | Excel file processing        |
 
 ---
 
@@ -133,12 +139,35 @@ After cleaning, users can download the processed dataset as:
 ```text
 business-data-automation/
 │
-├── app.py              # Streamlit application and UI
-├── processor.py        # Data processing and analysis logic
-├── requirements.txt    # Python dependencies
-├── .gitignore          # Git ignored files
-└── README.md           # Project documentation
+├── app.py
+├── processor.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+│
+└── screenshots/
+    ├── overview.png
+    ├── analysis.png
+    └── cleaning.png
 ```
+
+### Main Files
+
+**`app.py`**
+
+Contains the Streamlit user interface, file upload workflow, visualizations, cleaning controls, and download functionality.
+
+**`processor.py`**
+
+Contains the reusable data-processing logic including:
+
+* Data profiling
+* Type detection
+* Statistical analysis
+* Date analysis
+* Correlation analysis
+* Outlier detection
+* Data cleaning
 
 ---
 
@@ -182,25 +211,25 @@ cd business-data-automation
 
 ### 3. Create a virtual environment
 
-Windows:
-
 ```bash
 python -m venv venv
 ```
 
-Activate it:
+### 4. Activate the environment
+
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### 4. Install dependencies
+### 5. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Start the application
+### 6. Start the application
 
 ```bash
 streamlit run app.py
@@ -212,7 +241,7 @@ The application will open in your browser.
 
 ## 📌 Example Use Cases
 
-This tool can be useful for datasets such as:
+The tool can be used for many types of tabular datasets, including:
 
 * Business data
 * Customer data
@@ -224,37 +253,36 @@ This tool can be useful for datasets such as:
 * Marketing data
 * General CSV/Excel files
 
-The application does not depend on a fixed set of domain-specific columns, allowing it to work with many different types of tabular datasets.
+The application does **not** depend on fixed domain-specific columns, allowing it to work with different types of datasets.
 
 ---
 
 ## 🎯 Project Objective
 
-The goal of this project is to automate common data-preparation tasks that are often performed manually.
+Many data workflows involve repetitive manual tasks such as:
 
-Instead of repeatedly:
+1. Opening CSV/Excel files
+2. Inspecting data
+3. Checking missing values
+4. Finding duplicates
+5. Identifying data types
+6. Detecting outliers
+7. Calculating statistics
+8. Creating visualizations
+9. Cleaning the dataset
+10. Exporting the processed file
 
-1. Opening a CSV/Excel file
-2. Checking missing values
-3. Finding duplicates
-4. Inspecting data types
-5. Looking for outliers
-6. Calculating statistics
-7. Creating basic visualizations
-8. Cleaning the dataset
-9. Exporting the final file
-
-users can perform these tasks through a single interactive application.
+This application combines these common tasks into a single interactive workflow.
 
 ---
 
 ## 🔮 Future Improvements
 
-Potential improvements include:
+Potential future improvements include:
 
 * PDF report generation
 * Automated data-quality scoring
-* More visualization options
+* Additional visualization options
 * Advanced Excel support
 * Multi-file comparison
 * Intelligent column matching
@@ -262,7 +290,6 @@ Potential improvements include:
 * User-defined cleaning pipelines
 * Database connectivity
 * Authentication
-* Cloud deployment
 * AI-assisted data analysis
 
 ---
@@ -273,11 +300,8 @@ Potential improvements include:
 
 Computer Science & Artificial Intelligence
 
-GitHub:
-https://github.com/imaadmohd22
-
-LinkedIn:
-https://www.linkedin.com/in/mohd-imaad-b40311257/
+* GitHub: [imaadmohd22](https://github.com/imaadmohd22)
+* LinkedIn: [Mohd Imaad](https://www.linkedin.com/in/mohd-imaad-b40311257/)
 
 ---
 
